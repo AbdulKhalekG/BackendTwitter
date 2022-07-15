@@ -4,10 +4,15 @@ const { Pool } = require('pg');
 const helpers =require('./helpers')
 
 const config={
-  user:'faefrtbvusiifx',
-  host:'ec2-54-152-28-9.compute-1.amazonaws.com',
-  password:'5183a7d5b0f78a919654a538803702f9df706a162dad8a790cf5a5cb9796490c',
-  database:'d54loslgcri427'};
+  connectionStreing: process.env.DATABASE_URL,
+  max:500,
+  min:100,
+  ssl: {rejectUnauthorized:false}
+  //user:'faefrtbvusiifx',
+  //host:'ec2-54-152-28-9.compute-1.amazonaws.com',
+  //password:'5183a7d5b0f78a919654a538803702f9df706a162dad8a790cf5a5cb9796490c',
+  //database:'d54loslgcri427'
+};
   
   const pool = new Pool(config); 
   
